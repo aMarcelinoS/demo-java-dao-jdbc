@@ -36,7 +36,7 @@ public class Program {
 		}	
 		
 		
-		/*System.out.println("\n==== TEST 4: seller insert ====");
+		System.out.println("\n==== TEST 4: seller insert ====");
 		Seller newSeller = new Seller(null, "aLEX", "alex@gmail", new Date(), 4000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id = " + newSeller.getId());
@@ -46,9 +46,9 @@ public class Program {
 		seller = sellerDao.findById(12);
 		seller.setName("Alex Brown");
 		sellerDao.update(seller);
-		System.out.println("Update completed");*/
+		System.out.println("Update completed");
 		
-		System.out.println("\n==== TEST 5: seller update ====");
+		System.out.println("\n==== TEST 5: seller delete ====");
 		System.out.print("Enter id for delete: ");
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);

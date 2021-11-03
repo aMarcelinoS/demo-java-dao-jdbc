@@ -8,8 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.protocol.Resultset;
-
 import db.DB;
 import db.DbException;
 import model.dao.DepartmentDao;
@@ -65,7 +63,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		
 		try {
 			st = conn.prepareStatement(
-					"UPDATE department SET Name=? WHERE iD=? ");
+					"UPDATE department SET Name=? WHERE Id=? ");
 					
 			st.setString(1, obj.getName());
 			st.setInt(2, obj.getId());
@@ -83,8 +81,21 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
-		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement(
+				"DELETE FROM department WHERE Id=? ");
+			
+			st.setInt(1, id);
+			
+			st.executeUpdate();
+		}
+		catch(SQLException e) {
+			
+		}
+		finally{
+			DB.closeStatement(st);
+		}
 	}
 
 	@Override

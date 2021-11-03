@@ -31,15 +31,22 @@ public class Program2 {
 		System.out.println("==== TEST 3: department insert ====");
 		Department newDep = new Department(null, "Food");
 		departmentDao.insert(newDep);
-		System.out.println("Added with sucess!");*/
+		System.out.println("Added with sucess!");
 		
 		System.out.println();
 		System.out.println("==== TEST 4: department update ====");
 		Department Dp = new Department(5, "Camping");
 		departmentDao.update(Dp);
-		System.out.println("Updated sucess!");
+		System.out.println("Updated sucess!");*/
 		
+		System.out.println();
+		System.out.println("==== TEST 5: department deleteById ====");
+		System.out.print("Enter the id number to be deleted: ");
+		int Id = sc.nextInt();
+		departmentDao.deleteById(Id);
+		System.out.println("Sucessfully deleted!");
 
+		sc.close();
 	}
 
 }
