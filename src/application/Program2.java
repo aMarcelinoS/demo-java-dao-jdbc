@@ -13,19 +13,25 @@ public class Program2 {
 		Scanner sc = new Scanner(System.in);
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
-		System.out.println("==== TEST 1: seller findById ====");
+		System.out.println("==== TEST 1: department findById ====");
 		System.out.print("Enter the department Id you want to search: ");
 		int id = sc.nextInt();	
 		Department dep = departmentDao.findById(id);
 		System.out.println(dep);
 		
 		System.out.println();
-		System.out.println("==== TEST 2: seller findAll ====");
+		System.out.println("==== TEST 2: department findAll ====");
 		
 		List <Department> list = departmentDao.findAll();
 		for (Department Dp : list) {
-			System.out.println(Dp.getId() +" "+ Dp.getName());
+			System.out.println(Dp.getId() +" - "+ Dp.getName());
 		}
+		
+		System.out.println();
+		System.out.println("==== TEST 3: department insert ====");
+		Department newDep = new Department(null, "Food");
+		departmentDao.insert(newDep);
+		System.out.println("Added with sucess!");
 		
 		
 
