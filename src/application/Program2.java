@@ -27,12 +27,17 @@ public class Program2 {
 			System.out.println(Dp.getId() +" - "+ Dp.getName());
 		}
 		
-		System.out.println();
+		/*System.out.println();
 		System.out.println("==== TEST 3: department insert ====");
 		Department newDep = new Department(null, "Food");
 		departmentDao.insert(newDep);
-		System.out.println("Added with sucess!");
+		System.out.println("Added with sucess!");*/
 		
+		System.out.println();
+		System.out.println("==== TEST 4: department update ====");
+		Department Dp = new Department(5, "Camping");
+		departmentDao.update(Dp);
+		System.out.println("Updated sucess!");
 		
 
 	}
